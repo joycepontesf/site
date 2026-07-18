@@ -1,3 +1,68 @@
+const articles = [
+  {
+    tag: { pt: 'Medium · Artigo', en: 'Medium · Article', es: 'Medium · Artículo' },
+    title: {
+      pt: 'Inglaterra, a seleção embalada pelos seus ídolos.',
+      en: 'England, the national team carried by its idols.',
+      es: 'Inglaterra, la selección arropada por sus ídolos.',
+    },
+    excerpt: {
+      pt: 'The Beatles, Oasis, Jude Bellingham, Harry Kane. Tudo, sob os olhos de David Beckham.',
+      en: 'The Beatles, Oasis, Jude Bellingham, Harry Kane. All of it, under the eyes of David Beckham.',
+      es: 'The Beatles, Oasis, Jude Bellingham, Harry Kane. Todo, bajo los ojos de David Beckham.',
+    },
+    date: 'Jul 13, 2026',
+    url: 'https://medium.com/@oqueabahviu/inglaterra-a-sele%C3%A7%C3%A3o-embalada-pelos-seus-%C3%ADdolos-babeafae2c4b',
+  },
+  {
+    tag: { pt: 'Medium · Artigo', en: 'Medium · Article', es: 'Medium · Artículo' },
+    title: {
+      pt: 'Acabou a Olimpíada e o foco agora é 2027. Mas qual caminho seguir?',
+      en: 'The Olympics are over and the focus is now 2027. But which path to follow?',
+      es: 'Terminaron los Juegos Olímpicos y el foco ahora es 2027. ¿Pero qué camino seguir?',
+    },
+    excerpt: {
+      pt: 'A seleção brasileira feminina conseguiu, após 16 anos, chegar a uma final olímpica e ficou com a prata. A partir de agora, o foco muda, e a Copa do Mundo de 2027 passa a ser o grande objetivo, mas há pontos de atenção.',
+      en: 'The Brazilian women\'s national team reached an Olympic final for the first time in 16 years and took silver. From now on, the focus shifts — the 2027 World Cup becomes the main goal, but there are key points to watch.',
+      es: 'La selección femenina brasileña consiguió, tras 16 años, llegar a una final olímpica y se quedó con la plata. A partir de ahora, el foco cambia, y la Copa del Mundo de 2027 pasa a ser el gran objetivo, aunque hay puntos a tener en cuenta.',
+    },
+    date: 'Ago 20, 2024',
+    url: 'https://medium.com/@barbaranunes_12459/acabou-a-olimp%C3%ADada-e-o-foco-agora-%C3%A9-2027-mas-qual-caminho-seguir-8fb42d705a81',
+  },
+  {
+    tag: { pt: 'Medium · Artigo', en: 'Medium · Article', es: 'Medium · Artículo' },
+    title: {
+      pt: 'O espelho no meio de campo: o futebol reflete a sociedade que o assiste (2)',
+      en: 'The mirror in midfield: football reflects the society that watches it (2)',
+      es: 'El espejo en el mediocampo: el fútbol refleja la sociedad que lo observa (2)',
+    },
+    excerpt: {
+      pt: 'Hoje, três dias após o dia da Consciência Negra, Rodrygo Goes (jogador da seleção brasileira e do Real Madrid) compartilhou em suas redes sociais que está sofrendo ataques racistas. Você pode ver a postagem aqui.',
+      en: 'Three days after Black Awareness Day, Rodrygo Goes (Brazil and Real Madrid) shared on social media that he is suffering racist attacks. You can see the post here.',
+      es: 'Hoy, tres días después del Día de la Consciencia Negra, Rodrygo Goes (jugador de la selección brasileña y del Real Madrid) compartió en sus redes sociales que está sufriendo ataques racistas. Puedes ver la publicación aquí.',
+    },
+    date: 'Nov 23, 2023',
+    url: 'https://medium.com/@barbaranunes_12459/o-espelho-no-meio-de-campo-o-futebol-reflete-a-sociede-que-o-assiste-2-0df13d67c208',
+  },
+];
+
+function renderArticles(lang) {
+  const grid = document.getElementById('articles-grid');
+  if (!grid) return;
+  const readLabel = lang === 'en' ? 'Read on Medium →' : lang === 'es' ? 'Leer en Medium →' : 'Ler no Medium →';
+  grid.innerHTML = articles.map(a => `
+    <a class="article-card" href="${a.url}" target="_blank" rel="noopener">
+      <span class="article-tag">${a.tag[lang] || a.tag.pt}</span>
+      <h3>${a.title[lang] || a.title.pt}</h3>
+      <p>${a.excerpt[lang] || a.excerpt.pt}</p>
+      <div class="article-footer">
+        <span class="article-date">${a.date}</span>
+        <span class="article-link">${readLabel}</span>
+      </div>
+    </a>
+  `).join('');
+}
+
 const translations = {
   pt: {
     'nav.sobre': 'Sobre',
@@ -45,6 +110,9 @@ const translations = {
     'proj.info.p': 'Série de vídeos no YouTube com análises estatísticas e desdobramentos táticos das principais competições do futebol masculino - para quem quer entender o jogo a fundo.',
     'badge.concluido': 'Concluído',
     'badge.andamento': 'Em andamento',
+    'nav.artigos': 'Artigos',
+    'artigos.label': 'Medium',
+    'artigos.h2': 'O que escrevi.',
     'reels.label': 'No Instagram',
     'reels.h2': 'O jogo além<br/>do placar.',
     'contato.label': 'Contato',
@@ -104,6 +172,9 @@ const translations = {
     'proj.info.p': 'YouTube video series featuring statistical analysis and tactical breakdowns of the main men\'s football competitions - for those who want to understand the game deeply.',
     'badge.concluido': 'Finished',
     'badge.andamento': 'In progress',
+    'nav.artigos': 'Articles',
+    'artigos.label': 'Medium',
+    'artigos.h2': 'What I\'ve written.',
     'reels.label': 'On Instagram',
     'reels.h2': 'Beyond<br/>the scoreboard.',
     'contato.label': 'Contact',
@@ -163,6 +234,9 @@ const translations = {
     'proj.info.p': 'Serie de vídeos en YouTube con análisis estadísticos y desglose táctico de las principales competiciones del fútbol masculino - para quienes quieren entender el juego en profundidad.',
     'badge.concluido': 'Finalizado',
     'badge.andamento': 'En progreso',
+    'nav.artigos': 'Artículos',
+    'artigos.label': 'Medium',
+    'artigos.h2': 'Lo que he escrito.',
     'reels.label': 'En Instagram',
     'reels.h2': 'Más allá<br/>del marcador.',
     'contato.label': 'Contacto',
@@ -205,6 +279,8 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
   });
+
+  renderArticles(lang);
 
   const track = document.getElementById('strip-track');
   if (track && t['strip']) {
