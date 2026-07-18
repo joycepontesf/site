@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bárbara Nunes - Jornalista Esportiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#hero">Bárbara Nunes</a>
+    <div style="display:flex;align-items:center;">
+      <ul class="nav-links">
+        <li><a href="#sobre" data-i18n="nav.sobre">Sobre</a></li>
+        <li><a href="#experiencia" data-i18n="nav.experiencia">Experiência</a></li>
+        <li><a href="#projetos" data-i18n="nav.projetos">Projetos</a></li>
+        <li><a href="#cobertura">Reels</a></li>
+        <li><a href="#contato" data-i18n="nav.contato">Contato</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div id="hero">
+    <div class="hero-text">
+      <p class="section-label" data-i18n="hero.label">Jornalismo esportivo</p>
+      <h1 data-i18n-html="hero.h1">Eu uso <br/>o <em>futebol</em><br/>para contar histórias</h1>
+      <p data-i18n="hero.p">
+        Jornalista esportiva com foco em futebol masculino e feminino, criação de conteúdo, análise tática e produção audiovisual. Do campo à tela, com profundidade.
+      </p>
+      <div class="hero-actions">
+        <a href="#projetos" class="btn btn-primary" data-i18n="hero.btn1">Ver projetos →</a>
+        <a href="#contato" class="btn btn-ghost" data-i18n="hero.btn2">Entrar em contato</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <div class="photo-placeholder">
+        <img src="../img/barbara.jpeg" alt="Bárbara Nunes Jornalista Esportiva" />
+      </div>
+      <div class="hero-tag">
+        <span data-i18n="hero.tag.label">Disponível para</span>
+        <strong data-i18n="hero.tag.strong">Freelance &amp; Projetos</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE STRIP -->
+  <div class="strip">
+    <div class="strip-track" id="strip-track"></div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="sobre">
+    <div>
+      <p class="section-label" data-i18n="sobre.label">Sobre mim</p>
+      <h2 data-i18n-html="sobre.h2">Do esporte<br/>à narrativa.</h2>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-num">200+</div>
+          <div class="stat-label" data-i18n="sobre.stat1">Participações como comentarista em jogos e programas esportivos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2+</div>
+          <div class="stat-label" data-i18n="sobre.stat2">Anos de experiência</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">6+</div>
+          <div class="stat-label" data-i18n="sobre.stat3">Plataformas de transmissão</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3+</div>
+          <div class="stat-label" data-i18n="sobre.stat4">Projetos desenvolvidos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-body">
+      <p data-i18n="sobre.p1">Natural de Recife, Pernambuco, Bárbara Nunes construiu uma relação intensa com o esporte - primeiro, praticando diversos esportes na infância e adolescência, depois como comentarista e analista apaixonada pela tática e pela história que cada jogo carrega.</p>
+      <p data-i18n="sobre.p2">Através do jornalismo, busca amplificar as histórias de atletas e oferecer análises aprofundadas que vão além do placar: o contexto, a estratégia, as pessoas por trás de cada conquista.</p>
+      <p data-i18n="sobre.p3">Com passagem por plataformas como SportyNet, LiveBasketball BR, OneFootball, DSports e CBFTv, atua em transmissões ao vivo, produção de documentários e conteúdos em redes sociais, VTs e séries analíticas, além de locuções publicitárias para eventos de boxe na emissora DAZN.</p>
+      <p data-i18n="sobre.p4">Hoje concentra sua energia no futebol masculino e feminino, em clubes e seleções, acompanhando de perto a evolução do esporte em ligas como Bundesliga, La Liga, Ligue 1, Premier League e Serie A.</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experiencia">
+    <p class="section-label" data-i18n="exp.label">Experiência</p>
+    <h2 data-i18n="exp.h2">Onde já atuei.</h2>
+
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-outlet">SportyNet</div>
+        <h3 data-i18n="exp.sportynet.h3">Transmissões Nacionais e Internacionais ao vivo</h3>
+        <p data-i18n="exp.sportynet.p">Comentários e locução publicitária para campanhas institucionais da plataforma, cobrindo competições nacionais e internacionais.</p>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-outlet">OneFootball</div>
+        <h3 data-i18n="exp.onefootball.h3">Comentarista da Bundesliga</h3>
+        <p data-i18n="exp.onefootball.p">Comentários em transmissões ao vivo da liga para a plataforma global de futebol.</p>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-outlet">DSports</div>
+        <h3 data-i18n="exp.dsports.h3">Competições Sul-americanas</h3>
+        <p data-i18n="exp.dsports.p">Comentários em transmissões ao vivo da Copa Equador, Copa Argentina e Liga BetPlay Dimayor (Campeonato Colombiano).</p>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-outlet">LiveBasketball BR</div>
+        <h3 data-i18n="exp.livebasket.h3">Transmissão ao vivo - Basquete Nacional</h3>
+        <p data-i18n="exp.livebasket.p">Reportagem de quadra em transmissões do basquete brasileiro feminino ao vivo no canal do Youtube, ajudando a ampliar o alcance do esporte.</p>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-outlet">DAZN</div>
+        <h3 data-i18n="exp.dazn.h3">Narração - Eventos de Boxe</h3>
+        <p data-i18n="exp.dazn.p">Responsável pela narração oficial das chamadas publicitárias para lutas em eventos de boxe transmitidos pela plataforma.</p>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-outlet">Planeta Futebol Feminino</div>
+        <h3 data-i18n="exp.pff.h3">Futebol Feminino - Cobertura especial</h3>
+        <p data-i18n="exp.pff.p">Participações como Comentarista e Apresentadora do PFF Debate, cobrindo o futebol feminino nacional e internacional, acompanhando a evolução do esporte e os preparativos para a Copa do Mundo em 2027.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projetos">
+    <p class="section-label" data-i18n="proj.label">Projetos</p>
+    <h2 data-i18n="proj.h2">O que já contei.</h2>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-thumb"><img src="../img/a_volta_das_leoas.png" alt="a volta das leoas documentário"/>
+        </div>
+        <div class="project-body">
+          <div class="project-header">
+            <span class="project-tag" data-i18n="proj.leoas.tag">Documentário · 2025</span>
+            <span class="status-badge concluido" data-i18n="badge.concluido">Concluído</span>
+          </div>
+          <h3>A Volta das Leoas</h3>
+          <p data-i18n="proj.leoas.p">Documentário que acompanha o retorno do time feminino do Sport Club do Recife ao Campeonato Brasileiro A1. Uma história de superação, identidade e futebol nordestino.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb"><img src="../img/rota_do_mundial.jpeg" alt="rota do mundial"/>
+        </div>
+        <div class="project-body">
+          <div class="project-header">
+            <span class="project-tag" data-i18n="proj.rota.tag">Série · Copa 2027</span>
+            <span class="status-badge em-andamento" data-i18n="badge.andamento">Em andamento</span>
+          </div>
+          <h3>Rota do Mundial</h3>
+          <p data-i18n="proj.rota.p">Em parceria com Amanda Viana, projeto especial que acompanha a preparação da seleção brasileira feminina para a Copa do Mundo de 2027, sediada no Brasil.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb">📊</div>
+        <div class="project-body">
+          <div class="project-header">
+            <span class="project-tag" data-i18n="proj.info.tag">YouTube · Análise</span>
+            <span class="status-badge em-andamento" data-i18n="badge.andamento">Em andamento</span>
+          </div>
+          <h3>Informativos</h3>
+          <p data-i18n="proj.info.p">Série de vídeos no YouTube com análises estatísticas e desdobramentos táticos das principais competições do futebol masculino - para quem quer entender o jogo a fundo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REELS -->
+  <section id="cobertura">
+    <p class="section-label" data-i18n="reels.label">No Instagram</p>
+    <h2 data-i18n-html="reels.h2">O jogo além<br/>do placar.</h2>
+
+    <div class="reels-grid">
+      <div class="reel-item"><iframe src="https://www.instagram.com/reel/DZvdhfUvSW5/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe></div>
+      <div class="reel-item"><iframe src="https://www.instagram.com/reel/DaORbCwvIJ7/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe></div>
+      <div class="reel-item"><iframe src="https://www.instagram.com/reel/DaTJPMxO-Ll/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe></div>
+      <div class="reel-item"><iframe src="https://www.instagram.com/reel/DaQzig-PDIi/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe></div>
+      <div class="reel-item"><iframe src="https://www.instagram.com/reel/DZ-tyhWvPkU/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe></div>
+      <div class="reel-item"><iframe src="https://www.instagram.com/reel/DZ8EhXgxxSa/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contato">
+    <div class="contact-text">
+      <p class="section-label" data-i18n="contato.label">Contato</p>
+      <h2 data-i18n-html="contato.h2">Vamos<br/>trabalhar juntos.</h2>
+      <p data-i18n="contato.p">Disponível para coberturas jornalísticas, comentários esportivos, análise tática, produção audiovisual e projetos especiais ligados ao futebol.</p>
+
+    </div>
+
+    <form class="contact-form" action="https://formspree.io/f/xgojrzkr" method="POST" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <input type="text" name="nome" data-i18n-placeholder="contato.nome" placeholder="Nome" required />
+        <input type="email" name="email" placeholder="E-mail" required />
+      </div>
+      <input type="text" name="assunto" data-i18n-placeholder="contato.assunto" placeholder="Assunto" required />
+      <textarea name="mensagem" data-i18n-placeholder="contato.mensagem" placeholder="Sua mensagem..." required></textarea>
+      <button type="submit" class="btn btn-primary" data-i18n="contato.btn" style="align-self: flex-start; padding: 14px 28px;">
+        Enviar mensagem →
+      </button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span data-i18n="footer.copy">© 2026 Bárbara Nunes - Jornalista Esportiva</span>
+    <span>
+      <a href="https://www.instagram.com/oqueabahviu/" target="_blank" rel="noopener">Instagram</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.youtube.com/@oqueabahviu" target="_blank" rel="noopener">YouTube</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.tiktok.com/@oqueabahviu" target="_blank" rel="noopener">TikTok</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/barbaranunespereira/" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>
