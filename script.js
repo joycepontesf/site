@@ -144,7 +144,7 @@ const translations = {
     'sobre.stat2': 'Years of experience',
     'sobre.stat3': 'Broadcast platforms',
     'sobre.stat4': 'Projects developed',
-    'sobre.p1': 'From Recife, Pernambuco, Bárbara Nunes built an intense relationship with sport - first, practicing various sports in childhood and adolescence, then as a commentator and analyst passionate about tactics and the story each game carries.',
+    'sobre.p1': 'From Recife, Pernambuco, Bárbara Nunes built an intense relationship with sport - first, practicing various sports during her childhood and adolescence, then as a commentator and analyst passionate about tactics and the story each game carries.',
     'sobre.p2': 'Through journalism, she seeks to amplify athletes\' stories and offer in-depth analysis that goes beyond the scoreboard: the context, the strategy, the people behind each achievement.',
     'sobre.p3': 'With experience at platforms such as SportyNet, LiveBasketball BR, OneFootball, DSports and CBFTv, she works in live broadcasts, documentary production, social media content, VTs and analytical series, as well as voice-over work for boxing events on DAZN.',
     'sobre.p4': 'Today she focuses her energy on men\'s and women\'s football, clubs and national teams, following the evolution of the sport across leagues like the Bundesliga, La Liga, Ligue 1, Premier League and Serie A.',
