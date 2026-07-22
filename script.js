@@ -367,17 +367,39 @@ function setLang(lang) {
 
 function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
   const t = translations[currentLang];
-  btn.textContent = t['contato.success'];
-  btn.style.background = '#2A7A4B';
+
   btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = t['contato.btn'];
-    btn.style.background = '';
-    btn.disabled = false;
-    e.target.reset();
-  }, 3000);
+  btn.textContent = '...';
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' },
+  })
+    .then(res => {
+      if (res.ok) {
+        btn.textContent = t['contato.success'];
+        btn.style.background = '#2A7A4B';
+        form.reset();
+        setTimeout(() => {
+          btn.textContent = t['contato.btn'];
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 3000);
+      } else {
+        btn.textContent = '⚠ Erro ao enviar. Tente novamente.';
+        btn.style.background = '#C8432B';
+        btn.disabled = false;
+      }
+    })
+    .catch(() => {
+      btn.textContent = '⚠ Erro ao enviar. Tente novamente.';
+      btn.style.background = '#C8432B';
+      btn.disabled = false;
+    });
 }
 
 setLang(currentLang);
