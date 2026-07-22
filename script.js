@@ -1,3 +1,77 @@
+const projects = [
+  {
+    img: './img/a_volta_das_leoas.png',
+    alt: { pt: 'A Volta das Leoas documentário', en: 'A Volta das Leoas documentary', es: 'A Volta das Leoas documental' },
+    tag: { pt: 'Documentário · 2025', en: 'Documentary · 2025', es: 'Documental · 2025' },
+    status: 'concluido',
+    title: 'A Volta das Leoas',
+    desc: {
+      pt: 'Documentário que acompanha o retorno do time feminino do Sport Club do Recife ao Campeonato Brasileiro A1. Uma história de superação, identidade e futebol nordestino.',
+      en: 'Documentary following the return of Sport Club do Recife\'s women\'s team to the Brazilian Championship A1. A story of resilience, identity and northeastern football.',
+      es: 'Documental que sigue el regreso del equipo femenino del Sport Club do Recife al Campeonato Brasileño A1. Una historia de superación, identidad y fútbol brasileño.',
+    },
+    url: 'https://www.youtube.com/watch?v=71OVsxwm14s',
+  },
+  {
+    img: './img/rota_do_mundial.jpeg',
+    alt: { pt: 'Rota do Mundial série', en: 'Rota do Mundial series', es: 'Rota do Mundial serie' },
+    tag: { pt: 'Série · Copa 2027', en: 'Series · World Cup 2027', es: 'Serie · Mundial 2027' },
+    status: 'em-andamento',
+    title: 'Rota do Mundial',
+    desc: {
+      pt: 'Em parceria com Amanda Viana, projeto especial que acompanha a preparação da seleção brasileira feminina para a Copa do Mundo de 2027, sediada no Brasil.',
+      en: 'In partnership with Amanda Viana, a special project tracking the Brazilian women\'s national team\'s preparation for the 2027 World Cup, hosted in Brazil.',
+      es: 'Proyecto especial que sigue la preparación de la selección femenina brasileña para la Copa del Mundo 2027, sede Brasil. Está hecho en asociación a Amanda Viana.',
+    },
+    url: 'https://www.youtube.com/watch?v=x-yvvDPQxTY&list=PLOtqq6wQSto99TGRwsVZ4LcTSdq4hk98z',
+  },
+  {
+    img: null,
+    emoji: '📊',
+    alt: { pt: 'Informativos análise tática', en: 'Informativos tactical analysis', es: 'Informativos análisis táctico' },
+    tag: { pt: 'YouTube · Análise', en: 'YouTube · Analysis', es: 'YouTube · Análisis' },
+    status: 'em-andamento',
+    title: 'Informativos',
+    desc: {
+      pt: 'Série de vídeos no YouTube com análises estatísticas e desdobramentos táticos das principais competições do futebol masculino.',
+      en: 'YouTube video series featuring statistical analysis and tactical breakdowns of the main men\'s football competitions.',
+      es: 'Serie de vídeos en YouTube con análisis estadísticos y desglose táctico de las principales competiciones del fútbol masculino.',
+    },
+    url: 'https://www.youtube.com/@oqueabahviu',
+  },
+];
+
+function renderProjects(lang) {
+  const grid = document.getElementById('projects-grid');
+  if (!grid) return;
+  const badgeLabel = {
+    concluido: { pt: 'Concluído', en: 'Finished', es: 'Finalizado' },
+    'em-andamento': { pt: 'Em andamento', en: 'In progress', es: 'En progreso' },
+  };
+  const watchLabel = lang === 'en' ? 'Watch on YouTube →' : lang === 'es' ? 'Ver en YouTube →' : 'Ver no YouTube →';
+  grid.innerHTML = projects.map(p => {
+    const thumb = p.img
+      ? `<img src="${p.img}" alt="${p.alt[lang] || p.alt.pt}" />`
+      : `<span class="project-thumb-emoji">${p.emoji}</span>`;
+    return `
+      <a class="project-card" href="${p.url}" target="_blank" rel="noopener">
+        <div class="project-thumb">${thumb}</div>
+        <div class="project-body">
+          <div class="project-header">
+            <span class="project-tag">${p.tag[lang] || p.tag.pt}</span>
+            <span class="status-badge ${p.status}">${badgeLabel[p.status][lang]}</span>
+          </div>
+          <h3>${p.title}</h3>
+          <p>${p.desc[lang] || p.desc.pt}</p>
+          <div class="article-footer">
+            <span class="article-link">${watchLabel}</span>
+          </div>
+        </div>
+      </a>
+    `;
+  }).join('');
+}
+
 const articles = [
   {
     tag: { pt: 'Medium · Artigo', en: 'Medium · Article', es: 'Medium · Artículo' },
@@ -11,7 +85,7 @@ const articles = [
       en: 'The Beatles, Oasis, Jude Bellingham, Harry Kane. All of it, under the eyes of David Beckham.',
       es: 'The Beatles, Oasis, Jude Bellingham, Harry Kane. Todo, bajo los ojos de David Beckham.',
     },
-    date: 'Jul 13, 2026',
+    date: '13/7/2026',
     url: 'https://medium.com/@oqueabahviu/inglaterra-a-sele%C3%A7%C3%A3o-embalada-pelos-seus-%C3%ADdolos-babeafae2c4b',
   },
   {
@@ -26,7 +100,7 @@ const articles = [
       en: 'The Brazilian women\'s national team reached an Olympic final for the first time in 16 years and took silver. From now on, the focus shifts — the 2027 World Cup becomes the main goal, but there are key points to watch.',
       es: 'La selección femenina brasileña consiguió, tras 16 años, llegar a una final olímpica y se quedó con la plata. A partir de ahora, el foco cambia, y la Copa del Mundo de 2027 pasa a ser el gran objetivo, aunque hay puntos a tener en cuenta.',
     },
-    date: 'Ago 20, 2024',
+    date: '20/08/2024',
     url: 'https://medium.com/@barbaranunes_12459/acabou-a-olimp%C3%ADada-e-o-foco-agora-%C3%A9-2027-mas-qual-caminho-seguir-8fb42d705a81',
   },
   {
@@ -41,7 +115,7 @@ const articles = [
       en: 'Three days after Black Awareness Day, Rodrygo Goes (Brazil and Real Madrid) shared on social media that he is suffering racist attacks. You can see the post here.',
       es: 'Hoy, tres días después del Día de la Consciencia Negra, Rodrygo Goes (jugador de la selección brasileña y del Real Madrid) compartió en sus redes sociales que está sufriendo ataques racistas. Puedes ver la publicación aquí.',
     },
-    date: 'Nov 23, 2023',
+    date: '23/11/2023',
     url: 'https://medium.com/@barbaranunes_12459/o-espelho-no-meio-de-campo-o-futebol-reflete-a-sociede-que-o-assiste-2-0df13d67c208',
   },
 ];
@@ -280,6 +354,7 @@ function setLang(lang) {
     btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
   });
 
+  renderProjects(lang);
   renderArticles(lang);
 
   const track = document.getElementById('strip-track');
